@@ -1,0 +1,15 @@
+Participation au projet Station Botanie de Matthieu Marcialis
+
+Je me suis occupé de la partie Communication de ce projet, entre autre de comment envoyer les information de la carte au serveur TTN.
+Cette partie a été plus longue que prévu, pas par complexité de la tâche, mais par le manque d'information initiale, ainsi que les informations qui n'ont pas été mis à jour (cf. webhook endpoint).
+Bien que la partie a durée 2 séances, aucun progrès n'a pu être réalisé jusqu'à la deuxième, parce que nous avions aucune ressources nous permettant d'interfacer nos carte avec le serveur TTN.
+
+Une fois que Artem avait complété la partie capteur, je me suis attelé à la communication, après 2 tentatives râté un profeseur m'a fait remarqué que j'avais des bibliothèques dupliquées.
+Lorsque les duplicats ont été éliminés la carte a commencé à communiqué avec le serveur. J'ai modifié le code (qui été l'exemple ABP-Sensor de la Carte UCA21) pour capter l'humidité depuis notre capteur plutôt que depuis la carte.
+Il a fallut ensuite faire une interface graphique. Pour ce faire nosu avons utilisé Tago.io, déjà utilisé (sans réussite) durant un TP. Malgré le fait que le tutoriel pour envoyer les données de la carte à une interface, rien était envoyé.
+Après 30 minutes de troubleshooting, je me suis rendu compte que l'URL qui était utilisé pour livré les données à Tago.io (l'endpoint) était un ancien URL qui pointait sur le serveur américain, alors que mon compte était dans les serveurs européens.
+Après avoir changé l'URL la communication s'est réalisé sans problème et le dashboard créé affichait la température et l'humidité.
+
+Entre autre j'ai réalisé:
+  - La communication entre la carte et le serveur TTN
+  - La communication entre le serveur TTN et le serveur Toga.io
