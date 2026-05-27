@@ -265,7 +265,6 @@ void do_send(osjob_t* j){
             s.begin(true);
             int t = s.readTempC();
             int h = (1024-analogRead(A2))/6;
-            int h2 = s.readHumidity();
             int bat = (int)(readVcc()/10); // multiply by 10 for V in Cayenne
             int l = readLight(); // light sensor in Lx
             int16_t dataHighres = 0;
@@ -280,8 +279,7 @@ void do_send(osjob_t* j){
             Serial.print("Sensors values : temp = ");
             Serial.print( t);
             Serial.print("deg, hum= ");
-            Serial.println( h);
-            Serial.print( h2);
+            Serial.print( h);
             Serial.print("%, lum = ");
             Serial.print( l);
             Serial.print(" lumen, Accel : X = ");
